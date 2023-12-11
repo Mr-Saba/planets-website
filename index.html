@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio&family=League+Spartan&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>the planets</h1>
+        <img class="burgerIcon" src="./assets/burgerIcon.png" alt="">
+        <nav>
+            <a href="#" value="mercury">mercury</a>
+            <a href="#" value="venus">venus</a>
+            <a href="#" value="earth">earth</a>
+            <a href="#" value="mars">mars</a>
+            <a href="#" value="jupiter">jupiter</a>
+            <a href="#" value="saturn">saturn</a>
+            <a href="#" value="uranus">uranus</a>
+            <a href="#" value="neptune" >neptune</a>
+        </nav>
+    </header>
+    <main>
+        <div class="imageContainer">
+            <img id="imageSrc" src="./assets/planets/neptune/neptune.png" alt="uranus photo">
+        </div>
+        <div class="planetDescription">
+            <div>
+                <h1 id="title">neptune</h1>
+                <p id="description" class="longText">Neptune is the eighth and farthest-known Solar planet from the Sun. In the Solar System, it is the fourth-largest planet by diameter, the third-most-massive planet, and the densest giant planet. It is 17 times the mass of Earth, more massive than its near-twin Uranus.</p>
+                <div class="source">
+                    <p>Source : 
+                    </p>
+                    <a href="https://www.wikipedia.org/">
+                        Wikipedia 
+                    </a>
+                    <img src="./assets/linkIcon.png" alt="link icon">
+                </div>
+            </div>
+            <div>
+                <div class="buttonsContainer">
+                    <button class="active"><p class="number">01</p><p>overview</p></button>
+                    <button><p class="number">02</p><p>internal structure</p></button>
+                    <button><p class="number">03</p><p>surface geology</p></button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <p>rotation time</p>
+            <p id="rotationTime">16.08 hours</p>
+        </div>
+        <div>
+            <p>revolution time</p>
+            <p id="revolutionTime">164.79 years</p>
+        </div>
+        <div>
+            <p>radius</p>
+            <p id="radius">24.622 km</p>
+        </div>
+        <div>
+            <p>average temp.</p>
+            <p id="averageTemp">-201°C</p>
+        </div>
+    </footer>
+
+    <script src="./app.js"></script>
+</body>
+</html>
