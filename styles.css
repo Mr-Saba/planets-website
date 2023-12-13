@@ -34,7 +34,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 0px 30px;
-    z-index: 1;
+    z-index: 9;
     background-color: transparent;
     /* transition: background-color 500ms; */
     background-color: #070724;
@@ -44,10 +44,6 @@ header {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     background-position-y: 520px;
-}
-
-header.scrolled {
-    background-color: #070724;
 }
 
 header > h1 {
@@ -96,11 +92,64 @@ main {
     display: flex;
     justify-content: center;
     width: 60%;
-    /* height: 450px; */
+    height: 600px;
 }
 
-.imageContainer > img {
+.imageContainer > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.imageContainer.isSaturn > div::after {
+    content: '';
+    background-image: url(./assets/planets/saturn/saturnCircle.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-size: 569px;
+    width: 569px;
+    height: 569px;
+    z-index: 2;
+} 
+
+.imageContainer img {
     pointer-events: none;
+    z-index: 1;
+}
+
+.imageContainer .halfPart {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 500ms;
+    transition-timing-function: ease-out;
+    z-index: 2;
+    left: 49.9%;
+    opacity: 1;
+}
+
+.imageContainer.internal .halfPart {
+    left: 80%;
+    opacity: 0;
+}
+
+.imageContainer .surface {
+    position: absolute;
+    top: 85%;
+    transform: translate(-50%, -50%);
+    transition: 500ms;
+    transition-timing-function: ease-out;
+    z-index: 3;
+    left: 50%;
+    opacity: 0;
+}
+
+.imageContainer.surface .surface {
+    opacity: 1;
 }
 
 .planetDescription {
@@ -132,7 +181,7 @@ main {
 }
 
 .planetDescription .longText {
-    height: 120%
+    min-height: 100px;
 }
 
 .planetDescription .source {
@@ -244,6 +293,40 @@ footer > div > p:nth-child(2) {
     letter-spacing: -1.5px;
 }
 
+.burgerMenu {
+    display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    margin-top: 120px;
+    display: none;
+}
+
+/* track */
+::-webkit-scrollbar-track {
+    background: #07072460; 
+    border-radius: 5px;
+}
+
+/* thumb */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.75); 
+    border-radius: 5px;
+}
+
+/* thumb hover */
+::-webkit-scrollbar-thumb:hover {
+    background: white; 
+}
+
+@media only screen and (max-width: 1500px) {
+    .planetDescription .longText {
+        min-height: 150px;
+    }
+}
+
 @media only screen and (max-width: 1200px) {
     header {
         flex-direction: column;
@@ -259,13 +342,25 @@ footer > div > p:nth-child(2) {
         padding: 0px 25px;
     }
     .imageContainer {
-        padding: 60px 0px;
-        height: auto;
+        width: 100%;
+        height: 515px;
     }
     .imageContainer img {
-        width: 285px;
-        height: 285px;
+        width: 80%;
+    }
+
+    .imageContainer.isSaturn > div::after {
+        background-size: 454px;
+        width: 454px;
+        height: 454px;
     } 
+
+    .imageContainer .halfPart {
+        width: 40%;
+    }
+    .imageContainer .surface {
+        width: 30%;
+    }
     .planetDescription {
         flex-direction: row;
         width: 100%;
@@ -279,6 +374,11 @@ footer > div > p:nth-child(2) {
     }
     footer > div > p:nth-child(2) {
         font-size: 30px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .imageContainer {
+        overflow: hidden;
     }
 }
 @media only screen and (max-width: 750px) {
@@ -300,11 +400,13 @@ footer > div > p:nth-child(2) {
         height: 70px;
         padding: 0px 20px;
     }
-    header > nav {
-        display: none;
-    }
     .burgerIcon {
         display: unset;
+        cursor: pointer;
+        transition: 200ms;
+    }
+    .burgerIcon:hover {
+        opacity: 0.8;
     }
     main {
         margin-top: 120px;
@@ -316,7 +418,7 @@ footer > div > p:nth-child(2) {
         width: 100%;
         padding: 0px 20px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        z-index: 1;
+        z-index: 9;
         background-color: #070724;
         background-image: url(./assets/stars.png);
     }
@@ -377,12 +479,30 @@ footer > div > p:nth-child(2) {
     .planetDescription .buttonsContainer > button.active > p:nth-child(2) {
         margin-top: 3px;
     }
-    
-    .imageContainer > img {
-        width: 180px;
-        height: 180px;
+
+    .imageContainer img {
+        width: 100%;
     }
 
+    .imageContainer .halfPart {
+        width: 50%;
+    }
+    
+    .imageContainer.isSaturn img {
+        width: 60%;
+    }
+    
+    .imageContainer.isSaturn .halfPart {
+        width: 30%;
+    }
+
+    .imageContainer.isSaturn > div::after {
+        background-size: 70%;
+        width: 117%;
+        height: 117%;
+        background-position: center;
+    } 
+    
     .planetDescription > div:nth-child(1) {
         width: 100%;
         align-items: center;
@@ -409,5 +529,89 @@ footer > div > p:nth-child(2) {
         justify-content: space-between;
         padding: 15px 20px;
     }
-    
+    header > nav {
+        position: fixed;
+        top: 120px;
+        /* left: 0px; */
+        width: 100%;
+        height: 100%;
+        z-index: 99;
+        background-color: #070724;
+        padding: 20px 0px;
+        flex-direction: column;
+        color: white;
+        gap: 0px;
+        right: -100%;
+        transition: 200ms;
+    }
+
+    header > nav.visible {
+        right: 0px;
+    }
+
+    header > nav > a {
+        opacity: 1;
+        font-size: 21px;
+        font-weight: 300;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 26px 60px;
+        position: relative;
+        transition: 200ms;
+    }
+
+    header > nav > a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    header > nav > a.active:hover {
+        background-color: unset;
+    }
+
+    header > nav > a.active {
+        font-weight: bold;
+    }
+
+    header > nav > a::before {
+        content: '';
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        position: absolute;
+        top: 47%;
+        left: 20px;
+        transform: translateY(-50%); 
+        opacity: 1.25;
+    }
+    header > nav > a::after {
+        content: '>';
+        border-radius: 100%;
+        position: absolute;
+        right: 20px;
+        opacity: .4;
+    }
+
+    header > nav > a[value="mercury"]::before {
+        background-color: #DEF4FC;
+    }
+    header > nav > a[value="venus"]::before {
+        background-color: #F7CC7F;
+    }
+    header > nav > a[value="earth"]::before {
+        background-color: #545BFE;
+    }
+    header > nav > a[value="mars"]::before {
+        background-color: #FF6A45;
+    }
+    header > nav > a[value="jupiter"]::before {
+        background-color: #ECAD7A;
+    }
+    header > nav > a[value="saturn"]::before {
+        background-color: #FCCB6B;
+    }
+    header > nav > a[value="uranus"]::before {
+        background-color: #65F0D5;
+    }
+    header > nav > a[value="neptune"]::before {
+        background-color: #497EFA;
+    }
 }  

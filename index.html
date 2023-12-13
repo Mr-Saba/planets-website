@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Antonio&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Antonio&family=League+Spartan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
+    <!-- <link rel="stylesheet" href="/radioGroup.css"> -->
     <title>Document</title>
 </head>
 <body>
@@ -26,9 +27,14 @@
             <a href="#" value="neptune" >neptune</a>
         </nav>
     </header>
+
     <main>
-        <div class="imageContainer">
-            <img id="imageSrc" src="./assets/planets/neptune/neptune.png" alt="uranus photo">
+        <div class="imageContainer overview">
+            <div>
+                <img id="imageSrc" src="./assets/planets/mercury/mercury.png">
+                <img id="imageSrcHalf" class="halfPart" src="./assets/planets/mercury/mercuryHalf.png">
+                <img id="imageSrcSurface" class="surface" src="./assets/planets/mercury/mercurySurface.png">
+            </div>
         </div>
         <div class="planetDescription">
             <div>
@@ -45,9 +51,9 @@
             </div>
             <div>
                 <div class="buttonsContainer">
-                    <button class="active"><p class="number">01</p><p>overview</p></button>
-                    <button><p class="number">02</p><p>internal structure</p></button>
-                    <button><p class="number">03</p><p>surface geology</p></button>
+                    <button id="overview" class="active"><p class="number">01</p><p>overview</p></button>
+                    <button id="internal"><p class="number">02</p><p>internal structure</p></button>
+                    <button id="surface"><p class="number">03</p><p>surface geology</p></button>
                 </div>
             </div>
         </div>
