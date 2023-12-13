@@ -3,7 +3,7 @@ const buttonsContainer = Array.from(document.querySelector('.planetDescription .
 const headerElement = document.querySelector('header')
 const startupPlanet = 'mercury'
 const imageContainer = document.querySelector('.imageContainer')
-const burgerIcon = document.querySelector('.burgerIcon')
+const burgerIcon = document.querySelector('.burger')
 
 let planetsData = {
 
@@ -29,6 +29,7 @@ function initializeEvents() {
             buttonsContainer[0].classList.add('active')
 
             document.querySelector('header > nav').classList.remove('visible')
+            burgerIcon.classList.remove('clicked')
         })
     });
     
@@ -50,8 +51,10 @@ function initializeEvents() {
 
         if(!linkContainer.classList.contains('visible')) {
             linkContainer.classList.add('visible')
+            burgerIcon.classList.add('clicked')
         } else {
             linkContainer.classList.remove('visible')
+            burgerIcon.classList.remove('clicked')
         }
     })
 }
