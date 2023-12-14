@@ -540,6 +540,10 @@ footer > div > p:nth-child(2) {
         width: 30%;
     }
 
+    .imageContainer .imageSrcSurface {
+        width: 100px;
+    }
+
     .imageContainer.isSaturn > div::after {
         top: 50%;
         background-size: 70%;

@@ -6,7 +6,7 @@ const imageContainer = document.querySelector('.imageContainer')
 const burgerIcon = document.querySelector('.burger')
 
 let planetsData = {
-
+    
 }
 
 initializeEvents()
@@ -100,5 +100,3 @@ function setHTMLData(data) {
     classToDelete1.length > 0 && imageContainer.classList.remove(classToDelete1)
     imageContainer.classList.add('overview')
 }
-
-
