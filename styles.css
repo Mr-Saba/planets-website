@@ -168,12 +168,13 @@ main {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    transition: 500ms;
+    transition: 0ms;
     transition-timing-function: ease-out;
     z-index: 2;
     left: 49.9%;
     opacity: 1;
 }
+
 
 .imageContainer.internal .halfPart {
     left: 80%;
@@ -184,7 +185,7 @@ main {
     position: absolute;
     top: 85%;
     transform: translate(-50%, -50%);
-    transition: 500ms;
+    transition: 0ms;
     transition-timing-function: ease-out;
     z-index: 3;
     left: 50%;
@@ -194,6 +195,14 @@ main {
 .imageContainer.surface .surface {
     opacity: 1;
 }
+
+.imageContainer.transition .halfPart {
+    transition: 500ms;
+}
+.imageContainer.transition .surface {
+    transition: 500ms;
+}
+
 
 .planetDescription {
     width: 30%;
@@ -532,8 +541,8 @@ footer > div > p:nth-child(2) {
         width: 50%;
     }
     
-    .imageContainer.isSaturn img {
-        width: 60%;
+    .imageContainer.isSaturn img:nth-child(1) {
+        width: 60%; 
     }
     
     .imageContainer.isSaturn .halfPart {

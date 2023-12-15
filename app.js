@@ -30,6 +30,8 @@ function initializeEvents() {
 
             document.querySelector('header > nav').classList.remove('visible')
             burgerIcon.classList.remove('clicked')
+
+            imageContainer.classList.remove('transition')
         })
     });
     
@@ -40,9 +42,13 @@ function initializeEvents() {
 
             document.querySelector('#description').innerText = planetsData.description[el.id]
 
-            let classToDelete = Array.from(imageContainer.classList).filter(className => className !== 'imageContainer' && className !== 'isSaturn')
+            // debugger
+
+            let classToDelete = Array.from(imageContainer.classList).filter(className => className !== 'imageContainer' && className !== 'isSaturn' && className !== 'transition')
             classToDelete.length > 0 && imageContainer.classList.remove(classToDelete)
             imageContainer.classList.add(el.id)
+
+            imageContainer.classList.add('transition')
         })
     });
 
