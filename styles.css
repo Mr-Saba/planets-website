@@ -143,6 +143,7 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
+    transform: scale(var(--app-scale));
 }
 
 .imageContainer.isSaturn > div::after {
