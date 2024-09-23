@@ -13,27 +13,27 @@ body {
     animation-duration: 100s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    background-position-y: 520px;
+    background-position-y: calc(520px * var(--app-scale));
 }
 
 @keyframes moveStars {
     100% {
-        background-position: 1440px 520px;
+        background-position: calc(1440px * var(--app-scale)) calc(520px * var(--app-scale));
     }
 }
 
 header {
     width: 100%;
-    height: 70px;
+    height: calc(70px * var(--app-scale));
     position: fixed;
     top: 0px;
     left: 0px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: calc(1px * var(--app-scale)) solid rgba(255, 255, 255, 0.2);
     text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 30px;
+    padding: 0px calc(30px * var(--app-scale));
     z-index: 9;
     background-color: transparent;
     /* transition: background-color 500ms; */
@@ -43,25 +43,25 @@ header {
     animation-duration: 100s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    background-position-y: 520px;
+    background-position-y: calc(520px * var(--app-scale));
 }
 
 header > h1 {
     color: white;
     font-family: Antonio;
-    font-size: 28px;
-    letter-spacing: -1.05px;
+    font-size: calc(28px * var(--app-scale));
+    letter-spacing: calc(-1.05px * var(--app-scale));
 }
 
 header > nav {
     display: flex;
-    gap: 30px;
+    gap: calc(30px * var(--app-scale));
 }
 
 header > nav > a {
     font-family: 'League Spartan', sans-serif;
     color: white;
-    font-size: 11.5px;
+    font-size: calc(11.5px * var(--app-scale));
     font-weight: normal;
     letter-spacing: 1px;
     opacity: 0.75;
@@ -78,14 +78,14 @@ header > nav > a.active {
 
 .burger {
     display: none;
-    width: 30px;
-    height: 23px;
+    width: calc(30px * var(--app-scale));
+    height: calc(23px * var(--app-scale));
     align-items: center;
     position: relative;
 }
 .burger > .burgerIcon {
     width: 100%;
-    height: 3px;
+    height: calc(3px * var(--app-scale));
     background-color: white;
     transition: 300ms;
 }
@@ -95,7 +95,7 @@ header > nav > a.active {
     top: 0px;
     left: 0px;
     width: 100%;
-    height: 3px;
+    height: calc(3px * var(--app-scale));
     background-color: white;
     transition: 300ms;
 }
@@ -106,7 +106,7 @@ header > nav > a.active {
     bottom: 0px;
     left: 0px;
     width: 100%;
-    height: 3px;
+    height: calc(3px * var(--app-scale));
     background-color: white;
     transition: 300ms;
 }
@@ -116,16 +116,16 @@ header > nav > a.active {
 }
 .burger.clicked > .burgerIcon::before {
     transform: rotate(45deg);
-    top: 10px;
+    top: calc(10px * var(--app-scale));
 }
 .burger.clicked > .burgerIcon::after {
     transform: rotate(-45deg);
-    bottom: 10px;
+    bottom: calc(10px * var(--app-scale));
 }
 
 main {
-    padding: 80px 8vw 50px 8vw;
-    margin-top: 70px;
+    padding: calc(80px * var(--app-scale)) 8vw calc(50px * var(--app-scale)) 8vw;
+    margin-top: calc(70px * var(--app-scale));
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -135,7 +135,7 @@ main {
     display: flex;
     justify-content: center;
     width: 60%;
-    height: 550px;
+    height: calc(550px * var(--app-scale));
 }
 
 .imageContainer > div {
@@ -153,9 +153,9 @@ main {
     left: 50%;
     top: 50.5%;
     transform: translate(-50%,-50%);
-    background-size: 575px;
-    width: 575px;
-    height: 575px;
+    background-size: calc(575px * var(--app-scale));
+    width: calc(575px * var(--app-scale));
+    height: calc(575px * var(--app-scale));
     z-index: 2;
 } 
 
@@ -208,38 +208,38 @@ main {
     width: 30%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: calc(20px * var(--app-scale));
 }
 .planetDescription > div {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: calc(20px * var(--app-scale));
 }
 .planetDescription h1 {
     color: white;
     font-family: Antonio;
-    font-size: 80px;
-    letter-spacing: -1.05px;
+    font-size: calc(80px * var(--app-scale));
+    letter-spacing: calc(-1.05px * var(--app-scale));
     text-transform: uppercase;
 }
 .planetDescription p {
     color: #FFF;
     font-family: 'League Spartan', sans-serif;
-    font-size: 14px;
+    font-size: calc(14px * var(--app-scale));
     font-style: normal;
     font-weight: 400;
-    line-height: 25px;
+    line-height: calc(25px * var(--app-scale));
     opacity: 0.75;
 }
 
 .planetDescription .longText {
-    min-height: 100px;
+    min-height: calc(100px * var(--app-scale));
 }
 
 .planetDescription .source {
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap: calc(3px * var(--app-scale));
 }
 .planetDescription .source > p {
     display: inline;
@@ -249,21 +249,21 @@ main {
     color: #FFF;
     opacity: 0.5;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: calc(1px * var(--app-scale));
     font-family: 'League Spartan', sans-serif;
 }
 .planetDescription .buttonsContainer {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: calc(12px * var(--app-scale));
 }
 .planetDescription .buttonsContainer > button {
     display: flex;
     background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: calc(1px * var(--app-scale)) solid rgba(255, 255, 255, 0.2);
     color: white;
     text-transform: uppercase;
-    height: 48px;
+    height: calc(48px * var(--app-scale));
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -303,19 +303,19 @@ main {
 .planetDescription .buttonsContainer > button > .number {
     color: #FFF;
     font-family: 'League Spartan', sans-serif;
-    font-size: 15px;
+    font-size: calc(15px * var(--app-scale));
     font-style: normal;
     font-weight: 700;
-    letter-spacing: 2.571px;
+    letter-spacing: calc(2.571px * var(--app-scale));
     opacity: 0.7;
-    padding: 0px 20px;
+    padding: 0px calc(20px * var(--app-scale));
 }
 .planetDescription .buttonsContainer > button > p {
     opacity: 1;
 }
 
 footer {
-    padding: 50px 8vw;
+    padding: calc(50px * var(--app-scale)) 8vw;
     display: flex;
     justify-content: space-between;
     color: #FFF;
@@ -323,8 +323,8 @@ footer {
 }
 
 footer > div {
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 20px;
+    border: calc(1px * var(--app-scale)) solid rgba(255, 255, 255, 0.2);
+    padding: calc(20px * var(--app-scale));
     display: flex;
     flex-direction: column;
     width: 23%;
@@ -332,17 +332,17 @@ footer > div {
 footer > div > p:nth-child(1) {
     color: #FFF;
     font-family: 'League Spartan', sans-serif;
-    font-size: 11px;
+    font-size: calc(11px * var(--app-scale));
     font-weight: 200;
-    letter-spacing: 1px;
+    letter-spacing: calc(1px * var(--app-scale));
     opacity: 0.75;
 }
 footer > div > p:nth-child(2) {
     color: #FFF;
     font-family: Antonio;
-    font-size: 40px;
+    font-size: calc(40px * var(--app-scale));
     font-weight: 400;
-    letter-spacing: -1.5px;
+    letter-spacing: calc(-1.5px * var(--app-scale));
 }
 
 .burgerMenu {
@@ -351,21 +351,21 @@ footer > div > p:nth-child(2) {
 
 /* width */
 ::-webkit-scrollbar {
-    width: 5px;
-    margin-top: 120px;
+    width: calc(5px * var(--app-scale));
+    margin-top: calc(120px * var(--app-scale));
     display: none;
 }
 
 /* track */
 ::-webkit-scrollbar-track {
     background: #07072460; 
-    border-radius: 5px;
+    border-radius: calc(5px * var(--app-scale));
 }
 
 /* thumb */
 ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.75); 
-    border-radius: 5px;
+    border-radius: calc(5px * var(--app-scale));
 }
 
 /* thumb hover */
@@ -375,27 +375,27 @@ footer > div > p:nth-child(2) {
 
 @media only screen and (max-width: 1500px) {
     .planetDescription .longText {
-        min-height: 150px;
+        min-height: calc(150px * var(--app-scale));
     }
 }
 
 @media only screen and (max-width: 1200px) {
     header {
         flex-direction: column;
-        height: 120px;
+        height: calc(120px * var(--app-scale));
         justify-content: space-around;
     }
     header > nav {
-        gap: 20px;
+        gap: calc(20px * var(--app-scale));
     }
     main {
-        margin-top: 120px;
+        margin-top: calc(120px * var(--app-scale));
         flex-direction: column;
-        padding: 0px 25px;
+        padding: 0px calc(25px * var(--app-scale));
     }
     .imageContainer {
         width: 100%;
-        height: 515px;
+        height: calc(515px * var(--app-scale));
     }
     .imageContainer img {
         width: 80%;
@@ -403,9 +403,9 @@ footer > div > p:nth-child(2) {
 
     .imageContainer.isSaturn > div::after {
         top: 49.9%;
-        background-size: 454px;
-        width: 454px;
-        height: 454px;
+        background-size: calc(454px * var(--app-scale));
+        width: calc(454px * var(--app-scale));
+        height: calc(454px * var(--app-scale));
     } 
 
     .imageContainer .halfPart {
@@ -423,10 +423,10 @@ footer > div > p:nth-child(2) {
         width: 50%;
     }
     footer {
-        padding: 20px 25px;
+        padding: calc(20px * var(--app-scale)) calc(25px * var(--app-scale));
     }
     footer > div > p:nth-child(2) {
-        font-size: 30px;
+        font-size: calc(30px * var(--app-scale));
     }
 }
 @media only screen and (max-width: 1000px) {
@@ -436,13 +436,13 @@ footer > div > p:nth-child(2) {
 }
 @media only screen and (max-width: 750px) {
     footer > div {
-        padding: 10px;
+        padding: calc(10px * var(--app-scale));
     }
     footer > div > p:nth-child(1) {
-        font-size: 10px;
+        font-size: calc(10px * var(--app-scale));
     }
     footer > div > p:nth-child(2) {
-        font-size: 22px;
+        font-size: calc(22px * var(--app-scale));
     }
 }
 
@@ -450,8 +450,8 @@ footer > div > p:nth-child(2) {
     header {
         flex-direction: row;
         justify-content: space-between;
-        height: 70px;
-        padding: 0px 20px;
+        height: calc(70px * var(--app-scale));
+        padding: 0px calc(20px * var(--app-scale));
     }
     .burger {
         display: flex;
@@ -462,15 +462,15 @@ footer > div > p:nth-child(2) {
         opacity: 0.8;
     } */
     main {
-        margin-top: 120px;
+        margin-top: calc(120px * var(--app-scale));
     }
     .planetDescription > div:nth-child(2) {
         position: fixed;
-        top: 70px;
+        top: calc(70px * var(--app-scale));
         left: 0px;
         width: 100%;
-        padding: 0px 20px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0px calc(20px * var(--app-scale));
+        border-bottom: calc(1px * var(--app-scale)) solid rgba(255, 255, 255, 0.2);
         z-index: 9;
         background-color: #070724;
         background-image: url(./assets/stars.png);
@@ -482,55 +482,55 @@ footer > div > p:nth-child(2) {
     }
 
     .planetDescription .buttonsContainer.mercury > button.active {
-        border-bottom: 3px solid #419EBB;
+        border-bottom: calc(3px * var(--app-scale)) solid #419EBB;
         background-color: transparent;
     }
     .planetDescription .buttonsContainer.venus > button.active {
-        border-bottom: 3px solid #EDA249;
+        border-bottom: calc(3px * var(--app-scale)) solid #EDA249;
         background-color: transparent;
     }
     .planetDescription .buttonsContainer.earth > button.active {
-        border-bottom: 3px solid #6D2ED5;
+        border-bottom: calc(3px * var(--app-scale)) solid #6D2ED5;
         background-color: transparent;
     }
     .planetDescription .buttonsContainer.mars > button.active {
-        border-bottom: 3px solid #D14C32;
+        border-bottom: calc(3px * var(--app-scale)) solid #D14C32;
         background-color: transparent;
     }
     .planetDescription .buttonsContainer.jupiter > button.active {
-        border-bottom: 3px solid #D83A34;
+        border-bottom: calc(3px * var(--app-scale)) solid #D83A34;
         background-color: transparent;
     }
     .planetDescription .buttonsContainer.saturn > button.active {
-        border-bottom: 3px solid #CD5120;
+        border-bottom: calc(3px * var(--app-scale)) solid #CD5120;
         background-color: transparent;
     }
     .planetDescription .buttonsContainer.uranus > button.active {
-        border-bottom: 3px solid #1EC1A2;
+        border-bottom: calc(3px * var(--app-scale)) solid #1EC1A2;
         background-color: transparent;
     }
     .planetDescription .buttonsContainer.neptune > button.active {
-        border-bottom: 3px solid #2D68F0;
+        border-bottom: calc(3px * var(--app-scale)) solid #2D68F0;
         background-color: transparent;
     }
 
 
     .planetDescription .buttonsContainer > button {
-        padding: 0px 5px;
+        padding: 0px calc(5px * var(--app-scale));
         border: none;
     }
     .planetDescription .buttonsContainer .number {
         display: none;
     }
     .planetDescription .buttonsContainer > button {
-        padding: 0px 5px;
+        padding: 0px calc(5px * var(--app-scale));
         border: none;
     }
     .planetDescription .buttonsContainer > button > p:nth-child(2) {
         font-size: 3vw;
     }
     .planetDescription .buttonsContainer > button.active > p:nth-child(2) {
-        margin-top: 3px;
+        margin-top: calc(3px * var(--app-scale));
     }
 
     .imageContainer img {
@@ -550,7 +550,7 @@ footer > div > p:nth-child(2) {
     }
 
     .imageContainer .imageSrcSurface {
-        width: 100px;
+        width: calc(100px * var(--app-scale));
     }
 
     .imageContainer.isSaturn > div::after {
@@ -566,7 +566,7 @@ footer > div > p:nth-child(2) {
         align-items: center;
     }
     .planetDescription h1 {
-        font-size: 40px;
+        font-size: calc(40px * var(--app-scale));
         letter-spacing: 0px;
         font-weight: normal;
     }
@@ -575,9 +575,9 @@ footer > div > p:nth-child(2) {
     }
 
     footer {
-        padding: 20px;
+        padding: calc(20px * var(--app-scale));
         flex-direction: column;
-        gap: 8px;
+        gap: calc(8px * var(--app-scale));
     }
 
     footer > div {
@@ -585,17 +585,17 @@ footer > div > p:nth-child(2) {
         width: 100%;
         align-items: center;
         justify-content: space-between;
-        padding: 15px 20px;
+        padding: calc(15px * var(--app-scale)) calc(20px * var(--app-scale));;
     }
     header > nav {
         position: fixed;
-        top: 120px;
+        top: calc(120px * var(--app-scale));
         /* left: 0px; */
         width: 100%;
         height: 100%;
         z-index: 99;
         background-color: #070724;
-        padding: 20px 0px;
+        padding: calc(20px * var(--app-scale)) 0px;
         flex-direction: column;
         color: white;
         gap: 0px;
@@ -609,10 +609,10 @@ footer > div > p:nth-child(2) {
 
     header > nav > a {
         opacity: 1;
-        font-size: 21px;
+        font-size: calc(21px * var(--app-scale));
         font-weight: 300;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        padding: 26px 60px;
+        border-bottom: calc(1px * var(--app-scale)) solid rgba(255, 255, 255, 0.2);
+        padding: calc(26px * var(--app-scale)) calc(60px * var(--app-scale));
         position: relative;
         transition: 200ms;
     }
@@ -631,12 +631,12 @@ footer > div > p:nth-child(2) {
 
     header > nav > a::before {
         content: '';
-        width: 20px;
-        height: 20px;
+        width: calc(20px * var(--app-scale));
+        height: calc(20px * var(--app-scale));
         border-radius: 100%;
         position: absolute;
         top: 47%;
-        left: 20px;
+        left: calc(20px * var(--app-scale));
         transform: translateY(-50%); 
         opacity: 1.25;
     }
@@ -644,7 +644,7 @@ footer > div > p:nth-child(2) {
         content: '>';
         border-radius: 100%;
         position: absolute;
-        right: 20px;
+        right: calc(20px * var(--app-scale));
         opacity: .4;
     }
 

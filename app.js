@@ -13,7 +13,17 @@ initializeEvents()
 
 setStartupData()
 
+window.dispatchEvent(new Event('resize'));
+
 function initializeEvents() {
+
+    window.addEventListener('resize', () => {
+        const scale = innerWidth > 1920 ? Math.max(1, Math.min(innerWidth / 1920, innerHeight / 1080)) : 1;
+
+        const doc = document.documentElement;
+        doc.style.setProperty('--app-scale', `${scale}`);
+    });
+
     linkContainer.forEach(el => {
         el.addEventListener('click', () => {
             linkContainer.forEach(el => el.classList.remove('active'))
